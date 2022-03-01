@@ -3,6 +3,10 @@
   background: transparent;
 }
 
+.header {
+  position: sticky;
+  top: 0;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }

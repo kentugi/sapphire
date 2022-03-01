@@ -13,6 +13,46 @@
   </head>
 
   <body>
+  <%# /put nav bar here %>
+<div class="ms-5 me-5">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        Sapphire
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+        <a href="#" class="btn btn-outline-primary me-2">Login</a>
+        <a href="#" class="btn btn-primary">Sign-up</a>
+      </div>
+    </header>
+  </div>
     <%= yield %>
+    <%# put footer %>
+<div>
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="text-muted">© 2022 Sapphire, Inc</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-5">
+      <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-twitter"></i></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-facebook"></i></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-instagram"></i></a></li>
+    </ul>
+  </footer>
+</div>
+
+
   </body>
 </html>

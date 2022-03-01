@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: transparent;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,26 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-link{
+  font-family: 'Avenir', Helvetica, sans-serif;
+  font-size: medium;
+  font-weight: lighter;
+  color: black;
+}
+.nav-link:hover {
+  border-bottom: 1px solid rgb(0, 0, 0);
+  color: black;
+}
+
+.nav-link:active {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.sapphire-inc{
+  font-family: 'Avenir', Helvetica, sans-serif;
+  font-size: small;
+  font-weight: lighter;
+  color: rgb(95, 95, 95);
 }

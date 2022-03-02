@@ -1,11 +1,8 @@
-Here be the boats!
-
-
-
-
+<h2>Boat list</h2>
 <div class="cards">
   <% @boats.each do |boat| %>
-    <div class="card-trip">
+    <%= link_to boat_path(boat) do %>
+      <div class="card-trip">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         <div class="card-trip-infos">
           <div>
@@ -15,6 +12,10 @@ Here be the boats!
           <h2 class="card-trip-pricing"><%= boat.price %></h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
-    </div>
+      </div>
+      <% end %>
   <% end %>
 </div>
+
+
+<%= link_to "Explore", boats_path, class: "btn btn-light" %>

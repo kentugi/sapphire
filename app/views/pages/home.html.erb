@@ -9,16 +9,16 @@
     </div>
         <!-- The form -->
         <div class="container">
-          <form class="search-button">
-          <div class="d-flex align-items-center mt-5">
-            <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-            <%= f.input :boat_type, placeholder: 'Search', label:false, input_html: { class: "me-2 drop-shadow"}, wrapper_html: { class: "no-mb" } %>
-            <%= f.input :start_date, placeholder: 'Start Date', label:false, as: "date", html5: true, input_html: { class: "me-2 drop-shadow" }, wrapper_html: { class: "no-mb" } %>
-            <%= f.input :end_date, placeholder: 'End Date', label:false, as: "date", html5: true, input_html: { class: "me-2 drop-shadow"}, wrapper_html: { class: "no-mb" } %>
-            <%= f.submit "Submit", class: "btn btn-dark me-2" %>
-            <% end %>
-          </div>
-          </form>
+          <div class="search-button">
+            <div class="d-flex align-items-center mt-5">
+              <%= simple_form_for :search, url: boats_path, method: "GET", html: { class: 'form-inline d-flex' } do |f| %>
+                <%= f.input :boat_type, placeholder: 'Search', label:false, input_html: { class: "me-2 drop-shadow"}, wrapper_html: { class: "no-mb" } %>
+                <%= f.input :start_date, placeholder: 'Start Date', label:false, as: "date", html5: true, input_html: { class: "me-2 drop-shadow" }, wrapper_html: { class: "no-mb" } %>
+                <%= f.input :end_date, placeholder: 'End Date', label:false, as: "date", html5: true, input_html: { class: "me-2 drop-shadow"}, wrapper_html: { class: "no-mb" } %>
+                <%= f.submit "Submit", class: "btn btn-dark me-2" %>
+              <% end %>
             </div>
+          </div>
+        </div>
   </body>
 </head>

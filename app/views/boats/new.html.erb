@@ -1,0 +1,9 @@
+  <div class="container">
+    <h3>New Boat</h3>
+    <%= simple_form_for [@boat] do |boat| %>
+      <%= boat.input :title %>
+      <%= boat.input :boat_type %>
+      <%= boat.input :description %>
+      <%= boat.submit "Submit" %>
+      <%end%>
+  </div>

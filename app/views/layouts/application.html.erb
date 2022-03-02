@@ -21,16 +21,15 @@
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-5">Home</a></li>
-        <%# <li><a href="#" class="nav-link px-2">Features</a></li> %>
-        <%# <li><a href="#" class="nav-link px-2">Pricing</a></li> %>
-        <li><a href="#" class="nav-link px-5">FAQs</a></li>
-        <li><a href="#" class="nav-link px-5">About</a></li>
+        <li>
+          <%# <%= link_to "Home", root_path %>
+        </li>
       </ul>
 
-      <div class="col-md-3 text-end">
-        <a href="#" class="btn btn-lighter">Login</a>
-        <a href="#" class="btn btn-lighter">Sign Up</a>
+      <div class="col-md-3 py-2 text-end">
+        <%= link_to "Home", root_path, input_html: { class: "nav-links"} %>
+        <%= link_to "Login", user_session_path  %>
+        <%= link_to "Sign Up", new_user_registration_path  %>
       </div>
     </header>
   </div>

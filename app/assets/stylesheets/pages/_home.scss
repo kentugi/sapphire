@@ -1,7 +1,7 @@
 .banner {
   background-position: center;
   background-size: cover;
-  padding: 175px 0;
+  padding: 165px 0;
   width: 100%;
 }
 
@@ -58,4 +58,8 @@
   font-size: small;
   font-weight: lighter;
   padding: 5px 10px 5px 10px;
+}
+
+.no-mb {
+  margin-bottom: 0 !important;
 }

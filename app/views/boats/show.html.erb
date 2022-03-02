@@ -1,33 +1,45 @@
 
-
-<div class="product-cards d-flex">
-  <div class="product-img-main" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
- <div class="product-img-other">
-    <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      Lunch
+<div class="container">
+  <div class="product-cards d-flex">
+    <div class="product-img-main" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      Breakfast
     </div>
-    <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+  <div class="product-img-other">
+      <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+        Lunch
+      </div>
+      <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+        Dinner
+      </div>
+      <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+        Dinner
+      </div>
+      <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
       Dinner
+      </div>
     </div>
-    <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
     </div>
-    <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
+    <div class="product-desription-form d-flex">
+      <div class="product-description">
+        <h1><%= @boat.title %> <%= @boat.boat_type.capitalize  %></h1>
+        <p><%= @boat.description %></p>
+      </div>
+      <div class="product-form">
+      <p style="color: grey"><%= @boat.price %>IDR /per day</p>
+      <form class="reservations">
+          <div class="d-flex align-items-center mt-2">
+              <input type="date" class="form-control" id="checkin-date" type="date" placeholder="check-in" name="checkin" required>
+              <input type="date" class="form-control" id="checkout-date" type="date" placeholder="checkout" name="checkout" required>
+          </div>
+            <br>
+          <h3>Total price:</h3>
+          <div class="reservation-button d-grid gap-2">
+            <button class="btn btn-primary" type="button">Book now</button>
+          </div>
+      </form>
+     </div>
     </div>
-  </div>
+     <div class="product-map">
+     <h2>Map will be here</h2>
+     </div>
 </div>
-<h1><%= @boat.title %></h1>
-<h2><%= @boat.boat_type %></h2>
-<p><%= @boat.description %></p>
-<form class="reservations">
-    <div class="d-flex align-items-center mt-2">
-        <input type="date" id="checkin-date" type="date" placeholder="check-in" name="checkin" required>
-        <input type="date" id="checkout-date" type="date" placeholder="checkout" name="checkout" required>
-    </div>
-        <input type="text" name="total_price">
-      <br>
-        <button type="submit" class="btn btn-dark">Reserve</button>
-</form>

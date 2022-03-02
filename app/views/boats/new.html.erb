@@ -1,9 +1,9 @@
   <div class="container">
     <h3>New Boat</h3>
     <%= simple_form_for [@boat] do |boat| %>
-      <%= boat.input :title %>
-      <%= boat.input :boat_type %>
-      <%= boat.input :description %>
-      <%= boat.submit "Submit" %>
+      <%= boat.input :title, input_html: { class: "me-2 drop-shadow" }, wrapper_html: { class: "no-mb" } %>
+      <%= boat.input :boat_type, input_html: { class: "me-2 drop-shadow" }, wrapper_html: { class: "no-mb" } %>
+      <%= boat.input :description, input_html: { class: "me-2 drop-shadow" }, wrapper_html: { class: "no-mb" } %>
+      <%= boat.submit "Submit", class: "btn btn-dark me-2" %>
       <%end%>
   </div>

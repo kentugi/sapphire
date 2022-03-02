@@ -1,6 +1,7 @@
 class Boat < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_one_attached :photo
 
   BOAT_TYPES = ["catamaran", "yacht", "boatel"]
   BOAT_DESCRIPTIONS = [

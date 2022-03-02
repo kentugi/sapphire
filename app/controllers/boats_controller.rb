@@ -13,8 +13,8 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
-
-    if @boat.save
+    @boat.user = current_user
+    if @boat.save!
       redirect_to boat_path(@boat), notice: 'Boat was successfully created.'
     else
       render :new
@@ -41,7 +41,7 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:title, :description, :price, :location)
+    params.require(:boat).permit(:title, :description, :price, :location, :photo, :boat_type)
   end
 
 end

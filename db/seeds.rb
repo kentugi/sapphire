@@ -14,6 +14,7 @@ User.destroy_all
 
 puts 'Creating fake data...'
 15.times do
+  sleep(1)
   sailor = User.new(
     name: Faker::Name.name,
     email: Faker::Internet.email,

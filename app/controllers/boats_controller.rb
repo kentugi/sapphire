@@ -7,6 +7,15 @@ class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
     @booking = Booking.new
+    @boats = Boat.all
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { boat: boat }),
+        image_url: helpers.asset_url("sapphire-logo-02.png")
+      }
+    end
   end
 
   def new

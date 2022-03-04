@@ -1,2 +1,4 @@
 <h2><%= boat.title %></h2>
 <p><%= boat.location %></p>
+
+<%= Boat.where(location: boat.location).count %> boats in this port, see more:

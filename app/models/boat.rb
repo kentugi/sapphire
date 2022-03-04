@@ -17,7 +17,7 @@ class Boat < ApplicationRecord
     "The CATAMARAN Hybrid is the latest project designed by the interior designer of the group, it was specially built to offer 2-6 night private cruises and to accommodate up to 4 passengers in its large living space of 53 square meters.",
   ]
   LOCATIONS = ["Benoa/Denpasar", "Padangbai Bali", "Gilimanuk"]
-  PRICES = ["2000000", "3000000", "4000000"]
+  PRICES = [2_000_000, 3_000_000, 4_000_000]
   # has_one_attached :photo
 
   validates :title, presence: true

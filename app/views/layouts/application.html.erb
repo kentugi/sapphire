@@ -33,8 +33,14 @@
       </div>
     </header>
   </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if flash[:notice] %>
+      <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+        <span><%= flash[:notice] %></span>
+        <a data-bs-dismiss="alert" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </a>
+      </div>
+    <% end %>
     <%= yield %>
     <%# put footer %>
 <div>

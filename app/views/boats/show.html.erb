@@ -26,17 +26,11 @@
       </div>
       <div class="product-form">
       <p style="color: grey"><%= @boat.price %> IDR /per day</p>
-      <form class="reservations">
-          <div class="d-flex align-items-center mt-2">
-              <input type="date" class="form-control" id="checkin-date" type="date" placeholder="check-in" name="checkin" required>
-              <input type="date" class="form-control" id="checkout-date" type="date" placeholder="checkout" name="checkout" required>
-          </div>
-            <br>
-          <h3>Total price:</h3>
-          <div class="reservation-button d-grid gap-2">
-            <button class="btn btn-primary" type="button">Book now</button>
-          </div>
-      </form>
+      <%= simple_form_for([@boat, @booking]) do |f| %>
+        <%= f.input :start_date, html5: true, class: 'form-control' %>
+        <%= f.input :end_date, html5: true, class: 'form-control'   %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
      </div>
     </div>
      <div class="product-map">

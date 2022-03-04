@@ -5,14 +5,17 @@
   <%# had to change 'boat' to 'element' because now all boats in this content are element.searchable %>
     <%= link_to boat_path(element.searchable) do %>
       <div class="card-trip">
+
+         <% unless element.photo.key.nil?%>
         <%= cl_image_tag element.searchable.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %> 
         <div class="card-trip-infos">
           <div>
             <h2><%= element.searchable.title %></h2>
             <p><%= truncate(element.searchable.description, :length => 50) %></p>
+            <p><%= element.location %></p> 
           </div>
           <h2 class="card-trip-pricing"><%= element.searchable.price %></h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>
       <% end %>

@@ -1,16 +1,16 @@
 <h2>Boat list</h2>
 
 <div class="cards">
-  <% @boats.each do |boat| %>
+  <% @results.each do |boat| %>
     <%= link_to boat_path(boat) do %>
       <div class="card-trip">
         <%= cl_image_tag boat.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="card-trip-infos">
           <div>
-            <h2><%= boat.title %></h2>
-            <p><%= truncate(boat.description, :length => 50) %></p>
+            <h2><%= boat.searchable.title %></h2>
+            <p><%= truncate(boat.searchable.description, :length => 50) %></p>
           </div>
-          <h2 class="card-trip-pricing"><%= boat.price %></h2>
+          <h2 class="card-trip-pricing"><%= boat.searchable.price %></h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>

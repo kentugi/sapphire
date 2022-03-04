@@ -25,10 +25,10 @@ class BoatsController < ApplicationController
   # def edit
   # end
 
-  # def update
-  #   @boat.update(boat_params)
-  #   redirect_to boats_path(@boat)
-  # end
+  def update
+    @boat.update(boat_params)
+    redirect_to boats_path(@boat)
+  end
 
   def destroy
     @boat.destroy

@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require "open-uri"
 
 Booking.destroy_all
 Boat.destroy_all
@@ -20,7 +21,7 @@ puts 'Creating fake data...'
     password: "123456789"
   )
   sailor.save!
-
+  file = URI.open('https://asset.kompas.com/crops/CTKI1PcncTVjcGjPhhN8IfVxIOo=/0x0:1000x667/750x500/data/photo/2020/08/30/5f4b713cd3a45.jpg')
   boat = Boat.new(
     title: Faker::JapaneseMedia::DragonBall.character,
     description: Boat::BOAT_DESCRIPTIONS.sample,
@@ -29,6 +30,7 @@ puts 'Creating fake data...'
     price: Boat::PRICES.sample,
     user: sailor
   )
+  boat.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   boat.save!
 
   client = User.new(

@@ -14,7 +14,7 @@ class Boat < ApplicationRecord
     "Raja Laut was designed using traditional boat building techniques, and this nod to the past can be seen in the strong ironwood hull and two-masted gaff-rigged design. Step onboard and you are greeted with an expansive teak deck sporting loungers.",
     "The CATAMARAN Hybrid is the latest project designed by the interior designer of the group, it was specially built to offer 2-6 night private cruises and to accommodate up to 4 passengers in its large living space of 53 square meters.",
   ]
-  LOCATIONS = ["Port of Benoa", "Port Padangbai", "Pelabuhan Padang Bai"]
+  LOCATIONS = ["Benoa/Denpasar", "Port Padangbai", "Gilimanuk"]
   PRICES = ["2000000", "3000000", "4000000"]
   # has_one_attached :photo
 

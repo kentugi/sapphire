@@ -13,7 +13,10 @@
           <div class="d-flex justify-content-center">
             <%# <%= simple_form_for :search, url: boats_path, method: "GET", html: { class: 'form-inline' } do |f| %>
             <%= form_tag boats_path, method: :get, class: "d-flex align-items-center mt-5" do %>
-            <%= text_field_tag :boat_type, params[:boat_type], class: "form-control me-2 drop-shadow no-mb", placeholder: "Search" %>
+            <%#= text_field_tag :boat_type, params[:boat_type], class: "form-control me-2 drop-shadow no-mb", placeholder: "Search" %>
+            <div class="boat-dropdown">
+              <%= select_tag "boat_type", raw("<option>Catamaran</option><option>Yacht</option><option>Boatel</option>"), multiple: true %>
+            </div>
             <%= date_field_tag :start_date, "", class: "me-2 drop-shadow no-mb" %>
             <%= date_field_tag :end_date, "", class: "me-2 drop-shadow no-mb" %>
             <%= submit_tag "Submit", class: "btn btn-dark me-2" %>

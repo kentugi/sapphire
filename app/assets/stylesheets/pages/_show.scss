@@ -3,6 +3,10 @@
   width: 65vw;
 }
 
+.product-form {
+  margin-left: auto;
+}
+
 .product-img-other {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -31,7 +35,7 @@
 }
 
 .product-description {
-  margin-right: 130px;
+  width: 650px;
 }
 
 .product-map {

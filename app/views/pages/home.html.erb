@@ -1,24 +1,31 @@
 <head>
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <body>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://mocah.org/5315364-drone-view-aerial-view-boat-sand-coast-water-sea-ocean-blue-looking-down-nature-outdoors-wallpaper-aerial-view-above-sky-drone-person-travel-public-domain-images.html][IMG]https://mocah.org/thumbs/5315364-drone-view-aerial-view-boat-sand-coast-water-sea-ocean-blue-looking-down-nature-outdoors-wallpaper-aerial-view-above-sky-drone-person-travel-public-domain-images.jpg);">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1618131920480-5a853847a2a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2066&q=80)">
       <div class="container">
         <h1>Find your escape. Tailored for you.</h1>
-        <a class="btn btn-light" href="#">Explore</a>
+        <%= link_to "Explore", boats_path, class: "btn btn-light" %>
       </div>
     </div>
         <!-- The form -->
         <div class="container">
           <div class="search-button">
-            <div class="d-flex align-items-center mt-5">
-              <%= simple_form_for :search, url: boats_path, method: "GET", html: { class: 'form-inline d-flex' } do |f| %>
-                <%= f.input :boat_type, placeholder: 'Search', label:false, input_html: { class: "me-2 drop-shadow"}, wrapper_html: { class: "no-mb" } %>
-                <%= f.input :start_date, placeholder: 'Start Date', label:false, as: "date", html5: true, input_html: { class: "me-2 drop-shadow" }, wrapper_html: { class: "no-mb" } %>
-                <%= f.input :end_date, placeholder: 'End Date', label:false, as: "date", html5: true, input_html: { class: "me-2 drop-shadow"}, wrapper_html: { class: "no-mb" } %>
-                <%= f.submit "Submit", class: "btn btn-dark me-2" %>
-              <% end %>
-            </div>
+          <div class="d-flex justify-content-center">
+            <%# <%= simple_form_for :search, url: boats_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+            <%= form_tag boats_path, method: :get, class: "d-flex align-items-center mt-5" do %>
+            <%= text_field_tag :boat_type, params[:boat_type], class: "form-control me-2 drop-shadow no-mb", placeholder: "Search" %>
+            <%= date_field_tag :start_date, "", class: "me-2 drop-shadow no-mb" %>
+            <%= date_field_tag :end_date, "", class: "me-2 drop-shadow no-mb" %>
+            <%= submit_tag "Submit", class: "btn btn-dark me-2" %>
+            <% end %>
           </div>
-        </div>
-  </body>
-</head>
+          </div>
+            </div>
+
+  <%# <%= form_tag boats_path, method: :get do %>
+  <%# <%= text_field_tag :boat_type, params[:boat_type], class: "form-control", placeholder: "Search" %>
+  <%# <%= submit_tag "Search", class: "btn btn-primary" %>
+<%# <% end %>
+
+
+<%# <%= f.input :boat_type, placeholder: 'Search', label:false, input_html: { class: "me-2 drop-shadow"}, wrapper_html: { class: "no-mb" } %>

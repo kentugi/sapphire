@@ -10,25 +10,36 @@
         <!-- The form -->
         <div class="container">
           <div class="search-button">
-          <div class="d-flex justify-content-center">
-            <%# <%= simple_form_for :search, url: boats_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-            <%= form_tag boats_path, method: :get, class: "d-flex align-items-center mt-5" do %>
-            <%#= text_field_tag :boat_type, params[:boat_type], class: "form-control me-2 drop-shadow no-mb", placeholder: "Search" %>
-            <div class="boat-dropdown">
-              <%= select_tag "boat_type", raw("<option>Catamaran</option><option>Yacht</option><option>Boatel</option>"), multiple: true %>
+          <div class="justify-content-center d-flex align-items-center mt-5">
+            <%= simple_form_for boats_path, method: :get, html: { class: 'd-flex form-inline' } do |f| %>
+            <%#= form_tag boats_path, method: :get, class: "d-flex align-items-center mt-5" do %>
+            <div style="margin-right:17px">
+              <%= f.input :boat_type, label: false, as: :select, collection: Boat::BOAT_TYPES, multiple: true, input_html: { class: "drop-shadow", id: "boat_type"}, wrapper_html: { class: "no-mb" } %>
             </div>
-            <%= date_field_tag :start_date, "", class: "me-2 drop-shadow no-mb" %>
-            <%= date_field_tag :end_date, "", class: "me-2 drop-shadow no-mb" %>
-            <%= submit_tag "Submit", class: "btn btn-dark me-2" %>
+            <%= f.input :start_date, as: :date, label: false, html5: true, input_html: { class: "me-2 drop-shadow no-mb search-input date" }, wrapper_html: { class: "mb-0" } %>
+            <%= f.input :start_date, as: :date, label: false, html5: true, input_html: { class: "me-2 drop-shadow no-mb search-input date" }, wrapper_html: { class: "mb-0" } %>
+            <%= f.submit "Submit", class: "btn btn-dark mb-3 search-submit"  %>
             <% end %>
           </div>
           </div>
-            </div>
-
-  <%# <%= form_tag boats_path, method: :get do %>
-  <%# <%= text_field_tag :boat_type, params[:boat_type], class: "form-control", placeholder: "Search" %>
-  <%# <%= submit_tag "Search", class: "btn btn-primary" %>
-<%# <% end %>
+        </div>
 
 
-<%# <%= f.input :boat_type, placeholder: 'Search', label:false, input_html: { class: "me-2 drop-shadow"}, wrapper_html: { class: "no-mb" } %>
+
+
+
+
+
+
+            <%# <%= form_tag boats_path, method: :get do %>
+            <%# <%= text_field_tag :boat_type, params[:boat_type], class: "form-control", placeholder: "Search" %>
+            <%# <%= submit_tag "Search", class: "btn btn-primary" %>
+            <%# <% end %>
+
+            <%#= text_field_tag :boat_type, params[:boat_type], class: "form-control me-2 drop-shadow no-mb", placeholder: "Search" %>
+            <%# <div class="boat-dropdown"> %>
+              <%#= select_tag "boat_type", options_for_select(Boat::BOAT_TYPES), multiple: true, class: "me-2 drop-shadow no-mb"  %>
+            <%# </div> %>
+            <%#= date_field_tag :start_date, "", class: "me-2 drop-shadow no-mb" %>
+            <%#= date_field_tag :end_date, "", class: "me-2 drop-shadow no-mb" %>
+            <%#= submit_tag "Submit", class: "btn btn-dark me-2" %>

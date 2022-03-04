@@ -20,5 +20,5 @@ import "select2"
 
 // In your Javascript (external .js resource or <script> tag)
 $(document).ready(function() {
-  $('#boat_type').select2();
+  $('#boat_type').select2({ selectionCssClass: "search-input drop-shadow no-mb select2" });
 });

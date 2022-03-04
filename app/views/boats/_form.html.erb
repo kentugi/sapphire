@@ -1,0 +1,10 @@
+
+    <%= simple_form_for [@boat] do |boat| %>
+      <%= boat.input :photo, as: :file %>
+      <%= boat.input :title, input_html: { class: "me-2 drop-shadow" }, wrapper_html: { class: "no-mb" } %>
+      <%= boat.input :boat_type, input_html: { class: "me-2 drop-shadow" }, wrapper_html: { class: "no-mb" } %>
+      <%= boat.input :description, input_html: { class: "me-2 drop-shadow" }, wrapper_html: { class: "no-mb" } %>
+      <%= boat.input :price, input_html: { class: "me-2 drop-shadow" }, wrapper_html: { class: "no-mb" } %>
+      <%= boat.input :location, input_html: { class: "me-2 drop-shadow" }, wrapper_html: { class: "no-mb" } %>
+      <%= boat.submit "Submit", class: "btn btn-dark me-2" %>
+      <%end%>

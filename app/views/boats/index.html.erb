@@ -1,25 +1,45 @@
 <h2>Boat list</h2>
 
 <div class="cards">
-  <% @results.each do |boat| %>
-    <%= link_to boat_path(boat) do %>
+<% if params[:boat_type].present? %>
+  <% @results.each do |element| %>
+  <%# had to change 'boat' to 'element' because now all boats in this content are element.searchable %>
+    <%= link_to boat_path(element.searchable) do %>
       <div class="card-trip">
-        <% unless boat.photo.key.nil?%>
-        <%= cl_image_tag boat.photo.key, height: 300, width: 400, crop: :fill %>
+
+         <% unless element.searchable.photo.key.nil?%>
+        <%= cl_image_tag element.searchable.photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
         <div class="card-trip-infos">
           <div>
-
-            <h2><%= boat.searchable.title %></h2>
-            <p><%= truncate(boat.description, :length => 50) %></p>
-            <p><%= boat.location %></p>
+            <h2><%= element.searchable.title %></h2>
+            <p><%= truncate(element.searchable.description, :length => 50) %></p>
+            <p><%= element.searchable.location %></p>
           </div>
-          <h2 class="card-trip-pricing">$<%= boat.price %></h2>
+          <h2 class="card-trip-pricing"><%= element.searchable.price %></h2>
         </div>
       </div>
       <% end %>
   <% end %>
+<% else %>
+  <% @results.each do |element| %>
+  <%# had to change 'boat' to 'element' because now all boats in this content are element.searchable %>
+    <%= link_to boat_path(element) do %>
+      <div class="card-trip">
+
+         <% unless element.photo.key.nil?%>
+        <%= cl_image_tag element.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= element.title %></h2>
+            <p><%= truncate(element.description, :length => 50) %></p>
+            <p><%= element.location %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= element.price %></h2>
+        </div>
+      </div>
+      <% end %>
+  <% end %>
+<% end %>
 </div>
-
-
-<%= link_to "Explore", boats_path, class: "btn btn-light" %>

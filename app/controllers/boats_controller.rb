@@ -1,6 +1,7 @@
 class BoatsController < ApplicationController
   def index
-    @boats = Boat.all
+    boat_type = params[:boat_type]
+    @results = PgSearch.multisearch(boat_type)
   end
 
   def show

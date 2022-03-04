@@ -1,7 +1,7 @@
 <h2>Boat list</h2>
 
 <div class="cards">
-  <% @boats.each do |boat| %>
+  <% @results.each do |boat| %>
     <%= link_to boat_path(boat) do %>
       <div class="card-trip">
         <% unless boat.photo.key.nil?%>
@@ -9,7 +9,8 @@
         <% end %>
         <div class="card-trip-infos">
           <div>
-            <h2><%= boat.title %></h2>
+
+            <h2><%= boat.searchable.title %></h2>
             <p><%= truncate(boat.description, :length => 50) %></p>
             <p><%= boat.location %></p>
           </div>

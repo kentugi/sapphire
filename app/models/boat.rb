@@ -1,4 +1,7 @@
 class Boat < ApplicationRecord
+  include PgSearch::Model
+  multisearchable against: [:boat_type]
+
   belongs_to :user
   has_many :bookings
   has_one_attached :photo

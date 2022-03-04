@@ -14,3 +14,11 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+import $ from "jquery"
+import "select2"
+
+
+// In your Javascript (external .js resource or <script> tag)
+$(document).ready(function() {
+  $('#boat_type').select2();
+});

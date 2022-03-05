@@ -32,8 +32,10 @@
   transition-duration: 0.2;
 }
 
-.search-button input{
-  margin-top: 40px;
+.search-input {
+  background-color: white;
+  border-radius: 0;
+  margin-top: 45px;
   width: 250px;
   height: 40px;
   padding: 5px 10px 5px 10px;
@@ -42,6 +44,17 @@
   font-weight: lighter;
   line-height: inherit;
   margin-right: auto;
+
+  &.select2 {
+    border: none;
+    border-radius: 0;
+    height: 40px !important;
+    margin-top: 0px !important;
+  }
+}
+
+.search-submit {
+  margin-top: 45px !important;
 }
 
 .drop-shadow{
@@ -53,7 +66,7 @@
   margin-top: 40px;
   color: white;
   background-color: black;
-  height: 30px;
+  height: 42px;
   width: 125px;
   font-family: 'Avenir', Helvetica, sans-serif;
   font-size: small;
@@ -62,7 +75,7 @@
 }
 
 .btn-dark:hover {
-  background-color: rgba(128, 128, 128, 0.308);
+  background-color: rgba(66, 66, 66, 0.788);
   color: white;
   border: none;
   transition-duration: 0.2;
@@ -80,4 +93,8 @@
   font-weight: lighter;
   line-height: inherit;
   margin-right: auto;
+
+  &.date {
+    margin-top: 45px;
+  }
 }

@@ -4,7 +4,9 @@
 }
 
 .product-form {
-  border-style: solid;
+  border: solid 1px;
+  padding: 15px 15px 15px 15px;
+  border-radius: 7px;
   border-color: rgb(204, 204, 204);
   margin-left: auto;
   width: 336px
@@ -29,7 +31,6 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -37,14 +38,36 @@
   margin-top: 66px;
 }
 
+h1 {
+  font-family: 'Avenir', Helvetica, sans-serif;
+  font-weight: 350;
+  font-size: 36px;
+}
+
+h2 {
+  font-family: 'Avenir', Helvetica, sans-serif;
+  font-weight: 250;
+  font-size: 22px;
+}
 .product-description {
-  width: 480px;
+  width: 700px;
+  font-size: 16px;
+  font-family: 'Avenir', Helvetica, sans-serif;
 }
 
 .product-map {
   margin-top: 85px;
 }
 
-.reservation-button {
+.booking-button {
   margin-top: 39px;
+  color: white;
+  background-color: black;
+  height: 42px;
+  font-family: 'Avenir', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: lighter;
+  padding: 5px 10px 5px 10px;
+  margin-left: auto;
+  width: 310px
 }

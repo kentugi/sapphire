@@ -1,27 +1,23 @@
 
 <div class="container">
-  <div class="product-cards d-flex">
+  <div class="boat-image-cards d-flex mt-3">
     <div class="product-img-main" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      Breakfast
     </div>
   <div class="product-img-other">
       <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-        Lunch
       </div>
       <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-        Dinner
       </div>
       <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-        Dinner
       </div>
       <div class="product-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
       </div>
     </div>
     </div>
     <div class="product-desription-form d-flex">
       <div class="product-description">
         <h1><%= @boat.title %> <%= @boat.boat_type.capitalize  %></h1>
+        <h2><em><%= @boat.location%></em></h2>
         <p><%= @boat.description %></p>
       </div>
       <div class="product-form">
@@ -29,7 +25,7 @@
       <%= simple_form_for([@boat, @booking]) do |f| %>
         <%= f.input :start_date, html5: true, class: 'form-control' %>
         <%= f.input :end_date, html5: true, class: 'form-control'   %>
-        <%= f.submit class: 'btn btn-primary' %>
+        <%= f.submit class: 'booking-button btn btn-dark' %>
       <% end %>
      </div>
     </div>

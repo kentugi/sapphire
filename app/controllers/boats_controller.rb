@@ -11,6 +11,15 @@ class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
     @booking = Booking.new
+    @boats = Boat.where(id: params[:id])
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { boat: boat }),
+        image_url: helpers.asset_url("map-icon.png")
+      }
+    end
   end
 
   def new
@@ -27,10 +36,12 @@ class BoatsController < ApplicationController
     end
   end
 
-  # def edit
-  # end
+  def edit
+    @boat = Boat.find(params[:id])
+  end
 
   def update
+    @boat = Boat.find(params[:id])
     @boat.update(boat_params)
     redirect_to boats_path(@boat)
   end

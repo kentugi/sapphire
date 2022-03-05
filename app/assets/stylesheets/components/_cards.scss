@@ -79,3 +79,35 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+
+.card-dashboard {
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.card-dashboard-infos {
+  background-color: white;
+  border: 1px solid rgb(230, 230, 230);
+  margin: 10px;
+  border-radius: 0;
+  padding: 10px;
+  p {
+    font-size: 14px;
+    font-family: 'Avenir', 'Helvetica', 'sans-serif';
+  }
+}
+
+.card-dashboard-infos {
+ h2 {
+    font-family: 'Avenir', 'Helvetica', 'sans-serif';
+    font-size: 24px;
+  }
+}
+
+.dashboard-title {
+     font-family: 'Avenir', 'Helvetica', 'sans-serif';
+     font-size: 36px;
+     margin-top: 56px;
+ }

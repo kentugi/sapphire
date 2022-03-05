@@ -11,7 +11,10 @@
     </div>
     <% end %>
   </div>
-   <% elsif @bookings.any? %>
+  <% else %>
+    <h2>You don't have any bookings.</h2>
+  <% end %>
+   <% if @bookings.any? %>
      <h1>My bookings</h1>
   <div class="card-product">
   <% @bookings.each do |booking| %>
@@ -24,6 +27,5 @@
   </div>
   <% else %>
     <h2>You don't have any bookings.</h2>
-
 <% end %>
 </div>

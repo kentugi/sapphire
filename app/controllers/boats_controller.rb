@@ -1,8 +1,12 @@
 class BoatsController < ApplicationController
   def index
-    boat_type = params["/boats"][:boat_type]
-    if  boat_type.present?
-      @results = PgSearch.multisearch(boat_type)
+    if params["/boats"]
+      if params["/boats"][:boat_type].present?
+        boat_type = params["/boats"][:boat_type]
+        @results = PgSearch.multisearch(boat_type)
+      else
+        @results = Boat.all
+      end
     else
       @results = Boat.all
     end

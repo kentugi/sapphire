@@ -1,3 +1,36 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "new";
+
+// .results {
+//   font-family: 'Avenir', Helvetica, sans-serif;
+//   font-weight: 250;
+//   font-size: 22px;
+// }
+
+.card-trip-infos {
+  font-family: 'Avenir', Helvetica, sans-serif;
+  color: black;
+  text-decoration: none;
+}
+
+.cards {
+  background-color: white;
+}
+
+// .boat-title {
+//   font-family: 'Avenir', Helvetica, sans-serif;
+//   font-weight: 200;
+//   font-size: 22px;
+// }
+
+// .boat-location {
+//   font-family: 'Avenir', Helvetica, sans-serif;
+//   font-weight: 200;
+//   font-size: 18px;
+// }
+
+// .boat-description {
+//   font-family: 'Avenir', Helvetica, sans-serif;
+//   font-size: 14px;
+// }

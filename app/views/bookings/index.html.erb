@@ -1,1 +1,29 @@
-<p><%= @bookings %></p>
+<div class="container">
+
+<% if @listing_bookings.any? %>
+  <h1>My listings</h1>
+  <div class="card-product">
+  <% @listing_bookings.each do |booking| %>
+    <img src="" />
+    <div class="card-product-infos">
+      <h2><%= booking.boat.title %></h2>
+      <p>Is booked from <%= booking.start_date %> to <%= booking.end_date %>. The total cost is <%= booking.total %> </p>
+    </div>
+    <% end %>
+  </div>
+   <% elsif @bookings.any? %>
+     <h1>My bookings</h1>
+  <div class="card-product">
+  <% @bookings.each do |booking| %>
+    <img src="" />
+    <div class="card-product-infos">
+      <h2><%= booking.boat.title %></h2>
+      <p>Is booked from <%= booking.start_date %> to <%= booking.end_date %>. The total cost is <%= booking.total %> </p>
+    </div>
+    <% end %>
+  </div>
+  <% else %>
+    <h2>You don't have any bookings.</h2>
+
+<% end %>
+</div>

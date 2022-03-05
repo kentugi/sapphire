@@ -2,7 +2,10 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
+    @listing_bookings = current_user.boats.map do |boat|
+      boat.bookings.first
+    end
   end
 
   def new
